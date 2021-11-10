@@ -35,7 +35,6 @@ DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
 #define atmAcetone 16
 
 //Variables
-int chk;
 float hum;  //Stores humidity value
 float temp; //Stores temperature value
 
@@ -79,24 +78,6 @@ void loop()
   //Print temp and humidity values to serial monitor
   Serial.print("DHT 22\tHumidity: "); Serial.print(hum); Serial.print(" %, Temp: "); Serial.print(temp); Serial.println(" Celsius");
 
-  // TMP36
-  int sensorValueTMP36 = analogRead(A0);
-
-  // print out the value A0 reads:
-  Serial.print("TMP 36\tSensor Value: ");
-  Serial.print(sensorValueTMP36);
-
-  // convert the ADC reading to voltage
-  float voltageTMP36 = (sensorValueTMP36 * 5.0) / 1024.0;
-  Serial.print(", Volts: ");
-  Serial.print(voltageTMP36);
-
-  //convert the voltage to temperature in degrees
-  Serial.print(", Temp: ");
-  float temperature = (voltageTMP36 - .5) * 100;
-  Serial.print(temperature);
-  Serial.println(" Celsius");
-
   // MQ135
   int sensorValueMQ135 = analogRead(A1);
 
@@ -105,7 +86,7 @@ void loop()
   Serial.print(sensorValueMQ135);
 
   // convert the ADC reading to voltage
-  float voltageMQ135 = (sensorValueMQ135 * 5.0) / 1024.0;
+  float voltageMQ135 = (sensorValueMQ135 * 5.0) / 1023.0;
   Serial.print(", Volts: ");
   Serial.println(voltageMQ135);
 
