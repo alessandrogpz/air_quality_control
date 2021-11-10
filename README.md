@@ -1,4 +1,4 @@
-This project aims to monitor a room's air, temperature, and humidity levels and warn the user of any dangerous substances or conditions in its surroundings. 
+This project aims to monitor a room's air, temperature, and humidity levels and warn the user of any dangerous gas substances or dangerous air conditions. 
 
 Before its proper user, the equipment needs to undergo a 24-hour calibration (to stabilize and preheat the components), so the MQ135's voltage is stable.
 Calibration must occur outdoors with temperatures around 22c and 30-40% humidity levels.
